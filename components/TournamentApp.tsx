@@ -358,7 +358,50 @@ function HomeView({
           onClick={() => setView("draw")}
         />
       </div>
+
+      <RulesSection />
     </div>
+  );
+}
+
+function RulesSection() {
+  const rules = [
+    "Her takım minimum 2 adet kadın oyuncu bulundurmak zorundadır.",
+    "Oyunlar 3 set olacaktır. 25 sayı setler, uzatma seti 15 sayı olacaktır.",
+    "Sahada 6 as oyuncu olacaktır.",
+    "Takımların topu karşı sahaya göndermeden önce en fazla 3 kez topa dokunma hakkı vardır. Blok teması buna dahil değildir.",
+    "Aynı oyuncu topa üst üste iki kez vuramaz. Top tutulamaz veya taşınamaz, sadece vurulmalıdır.",
+    "Servis hakkı kazanan takımda oyuncular saat yönünde bir pozisyon döner.",
+    "Oyun sırasında fileye temas etmek yasaktır.",
+  ];
+
+  return (
+    <section className="rounded-lg border border-club-line bg-white p-4">
+      <div className="mb-3 flex items-center gap-3">
+        <span className="grid h-10 w-10 shrink-0 place-items-center rounded-md bg-club-soft text-club-red">
+          <ClipboardList size={21} />
+        </span>
+        <div>
+          <h2 className="font-display text-[26px] leading-none text-club-dark">
+            Turnuva Kuralları
+          </h2>
+          <p className="mt-1 text-xs text-club-muted">
+            Maçlar başlamadan önce tüm takımlar için geçerlidir.
+          </p>
+        </div>
+      </div>
+
+      <ol className="space-y-2">
+        {rules.map((rule, index) => (
+          <li key={rule} className="flex gap-3 rounded-md bg-club-cream px-3 py-2.5">
+            <span className="grid h-6 w-6 shrink-0 place-items-center rounded-md bg-club-red font-display text-base leading-none text-white">
+              {index + 1}
+            </span>
+            <span className="text-sm leading-5 text-club-ink">{rule}</span>
+          </li>
+        ))}
+      </ol>
+    </section>
   );
 }
 
