@@ -1,0 +1,90 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+  background: #fdfcf7;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  min-height: 100%;
+  background: #fdfcf7;
+}
+
+body {
+  min-height: 100%;
+  margin: 0;
+  background:
+    radial-gradient(circle at top left, rgba(181, 39, 41, 0.08), transparent 28rem),
+    linear-gradient(180deg, #fdfcf7 0%, #fbf7ea 100%);
+  color: #16181a;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+button {
+  -webkit-tap-highlight-color: transparent;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  outline: 2px solid #b52729;
+  outline-offset: 2px;
+}
+
+.poster-stripes {
+  background-image: repeating-linear-gradient(
+    135deg,
+    transparent 0 14px,
+    rgba(255, 255, 255, 0.08) 14px 15px
+  );
+}
+
+.chevron-band {
+  background-image: repeating-linear-gradient(
+    -45deg,
+    #b52729 0 10px,
+    #7a1a1c 10px 20px
+  );
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pop {
+  0% {
+    opacity: 0;
+    transform: scale(0.96);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.rise {
+  animation: rise 0.35s ease both;
+}
+
+.pop {
+  animation: pop 0.25s ease both;
+}
